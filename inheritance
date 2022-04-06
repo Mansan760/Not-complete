@@ -1,0 +1,86 @@
+#inlcude<stdio>
+using namespace std;
+class ParentChild
+{
+	string personailty;
+		protected:
+			string Bgroup,colour;
+			int height;
+	public:
+	string setvalue(string m)
+	{
+		personality=m;
+		return personality;
+	}	
+		
+};
+class Dad : public ParentChild
+{
+	Dad obj1;
+	public:
+		void setcolour(string c)
+		{
+			obj1.colour=c;
+		}
+		void setheight(int h)
+		{
+			obj1.height=h;
+		}
+		void setbloodgroup(string B)
+		{
+			obj1.Bgroup=B;
+		}
+		void printinfo(string p)
+		{
+			cout<<endl<<"The colour of Dad is "<<obj1.colour;
+			cout<<endl<<"The height of Dad is "<<obj1.height;
+			cout<<endl<<"The blood group of Dad is "<<obj1.Bgroup;
+			cout<<endl<<"The pesonality of Dad is "<<p;
+		}
+		
+};
+class Son : public ParentChild
+{
+	Son obj1;
+	public:
+		void setcolour(string c)
+		{
+			obj1.colour=c;
+		}
+		void setheight(int h)
+		{
+			obj1.height=h;
+		}
+		void setbloodgroup(string B)
+		{
+			obj1.Bgroup=B;
+		}
+		void printinfo(string p)
+		{
+			cout<<endl<<"The colour of son is "<<obj1.colour;
+			cout<<endl<<"The height of son is "<<obj1.height;
+			cout<<endl<<"The blood group of son is "<<obj1.Bgroup;
+			cout<<endl<<"The pesonality of Dad is "<<p;
+		}
+};
+int main()
+{
+	Dad obj23;
+	Son obj22;
+	string co,bl;
+	int he;
+	cout<<endl<<"Enter the colour of Dad";
+	cin>>obj23.setcolour(co);
+	cout<<endl<<"Enter the Height of Dad";
+	cin>>obj23.setheight(he);
+	cout<<endl<<"Enter the blood group of Dad";
+	cin>>obj23.setbloodgroup(bl);
+	cout<<endl<<"Enter the colour of son";
+	cin>>obj22.setcolour(co);
+	cout<<endl<<"Enter the Height of son";
+	cin>>obj22.setheight(he);
+	cout<<endl<<"Enter the blood group of son";
+	cin>>obj22.setbloodgroup(bl);
+	obj23.printinfo()
+	
+}
