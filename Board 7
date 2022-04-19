@@ -12,36 +12,76 @@ class Account
 	int principle;
 	int time;
 	public:
-		virtual void Name(string n)
+		virtual void Name(string)=0;
+		virtual void Acnum(int)=0;
+		virtual void Acnum(int ,int)=0;
+};
+class currentAccount : public Account
+{
+	
+	public:
+	void Name(string n)
 		{
 			name=n;
 		}
-		virtual void Acnum(int a)
+		void Acnum(int a)
 		{
 			acnum=a;
 		}
-			virtual void Acnum(int p,int t)
+		void Acnum(int p,int t)
 		{
 			principle=p;
 				time=t;
 		}
-};
-class CurrentAccount : public Account
-{
-	CurrentAccount obj1;
-	static int rate=5%;
-	void SimpleInterest()
+	float SimpleInterest()
 	{
-		int SI;
-		SI=(principle*Time*int CurrentAccount::rate)/100;
+		float SI;
+		int rate=5;
+		SI=(principle*time*rate)/100;
+		return SI;
 	}
-	void display()
+	void display(float s)
 	{
-		cout<<endl<<"The money u get as simple interest of 5% rate is"<<((obj1.SimpleInterest());
+		cout<<endl<<"The money u get as simple interest of 5% rate is"<<s;
+	}
+	class currentAccount : public Account
+{
+	
+	public:
+	void Name(string n)
+		{
+			name=n;
+		}
+		void Acnum(int a)
+		{
+			acnum=a;
+		}
+		void Acnum(int p,int t)
+		{
+			principle=p;
+				time=t;
+		}
+	float SimpleInterest()
+	{
+		float SI;
+		int rate=5;
+		SI=(principle*time*rate)/100;
+		return SI;
+	}
+	void display(float s)
+	{
+		cout<<endl<<"The money u get as simple interest of 5% rate is"<<s;
 	}
 };
 int main()
 {
-	CurrentAccount object1;
-	object1.
+	currentAccount object1;
+	int pi,ti;
+	float si;
+	cout<<endl<<"Enter principal & time";
+	cin>>pi>>ti;
+	object1.Acnum(pi,ti);
+	si=object1.SimpleInterest();
+	object1.display(si);
+	return 0;
 }
